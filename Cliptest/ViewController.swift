@@ -45,7 +45,9 @@ class ViewController: UIViewController {
 
     @IBAction func clipimgs(_ sender: Any) {
         
-        self.crop.clip()
+        if let cropimg =  self.crop.clip() {
+            self.imv.image = cropimg
+        }
         
     }
 }
