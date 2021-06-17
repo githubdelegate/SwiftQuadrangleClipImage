@@ -1,0 +1,2 @@
+# SwiftQuadrangleClipImage
+clip image quadrangle 
