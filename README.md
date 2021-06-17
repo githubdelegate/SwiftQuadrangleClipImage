@@ -1,4 +1,4 @@
 # SwiftQuadrangleClipImage
 clip image quadrangle 
 
-[video](./play.MP4)
+[demo git](./clipdemo.gif)
