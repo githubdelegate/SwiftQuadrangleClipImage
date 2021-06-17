@@ -1,4 +1,4 @@
 # SwiftQuadrangleClipImage
 clip image quadrangle 
 
-[demo git](./clipdemo.gif)
+![demo gif](https://github.com/githubdelegate/SwiftQuadrangleClipImage/blob/main/clipdemo.gif)
