@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ZYQuadRangleClipView: UIView {
+open class ZYQuadRangleClipView: UIView {
     
     var lineStrokeColor: UIColor! = UIColor(red: 72/255.0, green: 34/255.0, blue: 236/255, alpha: 1)
     

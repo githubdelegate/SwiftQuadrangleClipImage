@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIImage {
+open extension UIImage {
     /// 四个点  是  左上角维坐标系 的坐标点  顺时针方向, 四个左边点 使用比例值
     func clipImageWithPoint(topLeft: CGPoint, topRight: CGPoint, bottomRight: CGPoint, bottomLeft: CGPoint) -> UIImage? {
         let ciImage = CIImage(image: self)
