@@ -8,13 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    
     var imv: UIImageView!
+    var clipImv: UIImageView = UIImageView()
+    
     var crop: ZYQuadRangleClipView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let imv = UIImageView()
         imv.frame = self.view.bounds.inset(by: UIEdgeInsets(top: 100, left: 10, bottom: 100, right: 10))
@@ -22,14 +21,16 @@ class ViewController: UIViewController {
         imv.backgroundColor = .green
         
         let im =  UIImage(contentsOfFile: Bundle.main.path(forResource: "xxxas.jpg", ofType: nil)!)
-        
         imv.image = im
-        
         self.view.addSubview(imv)
         
-        self.imv = imv
-        self.imv.isUserInteractionEnabled = true
         
+        self.clipImv.alpha = 0
+        self.clipImv.frame = imv.frame.inset(by: UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30))
+        self.view.addSubview(self.clipImv)
+        
+        self.imv = imv
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,18 +38,16 @@ class ViewController: UIViewController {
         
         crop = ZYQuadRangleClipView()
         self.imv.addSubview(crop)
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-//            crop.clip()
-//        }
     }
 
     @IBAction func clipimgs(_ sender: Any) {
-        
-        if let cropimg =  self.crop.clip() {
-            self.imv.image = cropimg
+        if let cropimg =  self.crop.clipImage() {
+            self.clipImv.image = cropimg
+            UIView.animate(withDuration: 0.5) {
+                self.clipImv.alpha = 1
+                self.imv.alpha = 0
+            }
         }
-        
     }
 }
 

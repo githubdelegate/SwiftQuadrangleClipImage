@@ -17,6 +17,7 @@
 		0029D83B267AFE3F004B9CD7 /* ZYClipMathTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0029D83A267AFE3F004B9CD7 /* ZYClipMathTool.swift */; };
 		0029D83D267B1B78004B9CD7 /* ZYClipImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0029D83C267B1B78004B9CD7 /* ZYClipImageTool.swift */; };
 		0029D841267B22C2004B9CD7 /* xxxas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0029D840267B22C2004B9CD7 /* xxxas.jpg */; };
+		1AD58939268582A9001EF177 /* ZYClipPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD58938268582A9001EF177 /* ZYClipPointView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		0029D83A267AFE3F004B9CD7 /* ZYClipMathTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYClipMathTool.swift; sourceTree = "<group>"; };
 		0029D83C267B1B78004B9CD7 /* ZYClipImageTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYClipImageTool.swift; sourceTree = "<group>"; };
 		0029D840267B22C2004B9CD7 /* xxxas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xxxas.jpg; sourceTree = "<group>"; };
+		1AD58938268582A9001EF177 /* ZYClipPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYClipPointView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				0029D838267AE12E004B9CD7 /* ZYQuadRangleClipView.swift */,
+				1AD58938268582A9001EF177 /* ZYClipPointView.swift */,
 				0029D83C267B1B78004B9CD7 /* ZYClipImageTool.swift */,
 				0029D83A267AFE3F004B9CD7 /* ZYClipMathTool.swift */,
 			);
@@ -164,6 +167,7 @@
 				0029D829267AE11A004B9CD7 /* ViewController.swift in Sources */,
 				0029D825267AE11A004B9CD7 /* AppDelegate.swift in Sources */,
 				0029D827267AE11A004B9CD7 /* SceneDelegate.swift in Sources */,
+				1AD58939268582A9001EF177 /* ZYClipPointView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,8 +315,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R73DS25ADS;
+				DEVELOPMENT_TEAM = GJ4WQU9362;
 				INFOPLIST_FILE = Cliptest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,8 +335,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R73DS25ADS;
+				DEVELOPMENT_TEAM = GJ4WQU9362;
 				INFOPLIST_FILE = Cliptest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -50,7 +50,6 @@ extension CGPoint {
         return (from.x - to.x) * (from.x - to.x) + (from.y - to.y) * (from.y - to.y)
     }
     
-    
     /// 计算三个point 之间的夹角
     /// - Parameters:
     ///   - point1: point1 description
