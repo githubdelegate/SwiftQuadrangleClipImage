@@ -9,15 +9,15 @@ import UIKit
 
 open class ZYQuadRangleClipView: UIView {
     
-    var lineStrokeColor: UIColor! = UIColor(red: 72/255.0, green: 34/255.0, blue: 236/255, alpha: 1)
+    open var lineStrokeColor: UIColor! = UIColor(red: 72/255.0, green: 34/255.0, blue: 236/255, alpha: 1)
     
-    var outCircleWidth: CGFloat = 30, innerCircleWidth: CGFloat = 20
-    var outCircleColor: UIColor = .white, innerCircleColor: UIColor = UIColor(red: 4/255, green: 118/255, blue: 1/255, alpha: 0.8)
+    open var outCircleWidth: CGFloat = 30, innerCircleWidth: CGFloat = 20
+    open var outCircleColor: UIColor = .white, innerCircleColor: UIColor = UIColor(red: 4/255, green: 118/255, blue: 1/255, alpha: 0.8)
     
-    var safeAreaFillColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
-    var errorAreaFillColor: UIColor = UIColor(red: 1, green: 153/255, blue: 153/255, alpha: 0.5)
+    open var safeAreaFillColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
+    open var errorAreaFillColor: UIColor = UIColor(red: 1, green: 153/255, blue: 153/255, alpha: 0.5)
     
-    var linePath = UIBezierPath()
+    open var linePath = UIBezierPath()
     
     ///  四个顶点位置  使用的左上角坐标系  比例值
     fileprivate var leftTopPoint = CGPoint(x: 0, y: 0)
@@ -201,7 +201,7 @@ open class ZYQuadRangleClipView: UIView {
     
     /// 获取当前剪切的区域
     /// - Returns: 返回四个点 的 比例位置
-   public func getCurrentClipArea() -> (topLeft: CGPoint, topRight: CGPoint, bottomLeft: CGPoint, bottomRight: CGPoint) {
+    open func getCurrentClipArea() -> (topLeft: CGPoint, topRight: CGPoint, bottomLeft: CGPoint, bottomRight: CGPoint) {
         return (self.leftTopPoint, self.rightTopPoint,self.leftBottomPoint, self.rightBottomPoint)
     }
 }
@@ -210,7 +210,7 @@ extension ZYQuadRangleClipView {
     
     /// 如果superview 是 imageview 直接剪切获取 image
     /// - Returns: image
-    public func clipImage() -> UIImage? {
+    open func clipImage() -> UIImage? {
         if self.isLinePathValidate == false {
             return nil
         }
