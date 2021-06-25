@@ -64,19 +64,27 @@
 		0029D823267AE11A004B9CD7 /* Cliptest */ = {
 			isa = PBXGroup;
 			children = (
+				1AD5893726857BD0001EF177 /* ZYQuadRangleClip */,
 				0029D840267B22C2004B9CD7 /* xxxas.jpg */,
 				0029D824267AE11A004B9CD7 /* AppDelegate.swift */,
 				0029D826267AE11A004B9CD7 /* SceneDelegate.swift */,
 				0029D828267AE11A004B9CD7 /* ViewController.swift */,
-				0029D838267AE12E004B9CD7 /* ZYQuadRangleClipView.swift */,
-				0029D83C267B1B78004B9CD7 /* ZYClipImageTool.swift */,
-				0029D83A267AFE3F004B9CD7 /* ZYClipMathTool.swift */,
 				0029D82A267AE11A004B9CD7 /* Main.storyboard */,
 				0029D82D267AE11C004B9CD7 /* Assets.xcassets */,
 				0029D82F267AE11C004B9CD7 /* LaunchScreen.storyboard */,
 				0029D832267AE11C004B9CD7 /* Info.plist */,
 			);
 			path = Cliptest;
+			sourceTree = "<group>";
+		};
+		1AD5893726857BD0001EF177 /* ZYQuadRangleClip */ = {
+			isa = PBXGroup;
+			children = (
+				0029D838267AE12E004B9CD7 /* ZYQuadRangleClipView.swift */,
+				0029D83C267B1B78004B9CD7 /* ZYClipImageTool.swift */,
+				0029D83A267AFE3F004B9CD7 /* ZYClipMathTool.swift */,
+			);
+			path = ZYQuadRangleClip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

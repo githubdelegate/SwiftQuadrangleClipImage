@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class ZYClipPointView: UIView {
     
     var circleColor: UIColor = .white
@@ -21,13 +20,9 @@ class ZYClipPointView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        
         circleView.backgroundColor = self.circleColor
         self.addSubview(circleView)
-        
         innerCicleView.backgroundColor = self.innerCircleColor
-        
         self.addSubview(innerCicleView)
     }
     
@@ -56,14 +51,13 @@ class ZYQuadRangleClipView: UIView {
     var lineStrokeColor: UIColor! = UIColor(red: 72/255.0, green: 34/255.0, blue: 236/255, alpha: 1)
     var linefillColor: UIColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
     var lineErrorTipColor = UIColor(red: 1, green: 153/255, blue: 153/255, alpha: 1)
+    var linePath = UIBezierPath()
     
     ///  四个顶点位置  使用的左上角坐标系  比例值
     var leftTopPoint = CGPoint(x: 0, y: 0)
     var rightTopPoint = CGPoint(x: 1, y: 0)
     var leftBottomPoint = CGPoint(x: 0, y: 1)
     var rightBottomPoint = CGPoint(x: 1, y: 1)
-    
-    fileprivate var linePath = UIBezierPath()
     
     var lefttop = ZYClipPointView()
     var leftbottom = ZYClipPointView()
@@ -116,6 +110,10 @@ class ZYQuadRangleClipView: UIView {
         rightbottom.addGestureRecognizer(rbges)
         rbges.maximumNumberOfTouches = 1
         
+        linePath.lineWidth = 5
+        linePath.lineCapStyle = .round
+        linePath.setLineDash([5, 5], count: 2, phase: 0)
+        linePath.lineJoinStyle = .bevel
     }
     
     override func didMoveToSuperview() {
@@ -139,12 +137,7 @@ class ZYQuadRangleClipView: UIView {
             self.leftbottom.center = CGPoint(x: 0, y: 1).applying(CGAffineTransform(scaleX: self.bounds.width, y: self.bounds.height))
             self.righttop.center = CGPoint(x: 1, y: 0).applying(CGAffineTransform(scaleX: self.bounds.width, y: self.bounds.height))
             self.rightbottom.center = CGPoint(x: 1, y: 1).applying(CGAffineTransform(scaleX: self.bounds.width, y: self.bounds.height))
-            
-            self.linePath.lineWidth = 5
-    //        self.linePath.
-            self.linePath.lineCapStyle = .round
-            self.linePath.setLineDash([5, 5], count: 2, phase: 0)
-            self.linePath.lineJoinStyle = .bevel
+        
             self.linePath.move(to: self.lefttop.center)
             self.linePath.addLine(to: self.lefttop.center)
             self.linePath.addLine(to: self.righttop.center)
