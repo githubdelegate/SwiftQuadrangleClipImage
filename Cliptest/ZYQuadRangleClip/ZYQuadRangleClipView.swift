@@ -79,11 +79,11 @@ open class ZYQuadRangleClipView: UIView {
         view.circleColor = outCircleColor; view.innerCircleColor = innerCircleColor; view.circleWidth = outCircleWidth; view.innerCircleWidth = innerCircleWidth
     }
     
-    override func didMoveToSuperview() {
+    open override func didMoveToSuperview() {
         super.didMoveToSuperview()
     }
     
-    override func didMoveToWindow() {
+    open override func didMoveToWindow() {
         super.didMoveToWindow()
         
         // 计算imageview 里面image 大小
@@ -172,7 +172,7 @@ open class ZYQuadRangleClipView: UIView {
         self.setNeedsDisplay()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -186,7 +186,7 @@ open class ZYQuadRangleClipView: UIView {
         self.linePath.close()
     }
     
-    override func draw(_ rect: CGRect) {
+    open override func draw(_ rect: CGRect) {
         if self.isLinePathValidate == false {
             self.errorAreaFillColor.setFill()
         } else {
