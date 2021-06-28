@@ -17,7 +17,7 @@ class ZYClipPointView: UIView {
     var circleWidth: CGFloat = 30
     
     /// 内边圆
-    var innerCircleColor: UIColor = .blue
+    var innerCircleColor: UIColor = .red
     var innerCircleWidth: CGFloat = 20
     
     var innerCicleView: UIView = UIView()
@@ -38,6 +38,7 @@ class ZYClipPointView: UIView {
         
         circleView.backgroundColor = self.circleColor
         innerCicleView.backgroundColor = self.innerCircleColor
+//        innerCicleView.backgroundColor = .red
         
         circleView.frame.size = CGSize(width: self.circleWidth, height: self.circleWidth)
         circleView.center = CGPoint(x: 0.5, y: 0.5).applying(CGAffineTransform(scaleX: self.bounds.width, y: self.bounds.height))
@@ -48,8 +49,14 @@ class ZYClipPointView: UIView {
         innerCicleView.layer.cornerRadius = self.innerCircleWidth / 2
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.updateUI()
+    }
+    
     override func didMoveToWindow() {
         super.didMoveToWindow()
+        
         self.updateUI()
     }
 }

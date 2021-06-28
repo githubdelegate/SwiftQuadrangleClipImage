@@ -12,7 +12,7 @@ open class ZYQuadRangleClipView: UIView {
     open var lineStrokeColor: UIColor! = UIColor(red: 72/255.0, green: 34/255.0, blue: 236/255, alpha: 1)
     
     open var outCircleWidth: CGFloat = 30, innerCircleWidth: CGFloat = 20
-    open var outCircleColor: UIColor = .white, innerCircleColor: UIColor = UIColor(red: 4/255, green: 118/255, blue: 1/255, alpha: 0.8)
+    open var outCircleColor: UIColor = .white, innerCircleColor: UIColor = UIColor.blue
     
     open var safeAreaFillColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
     open var errorAreaFillColor: UIColor = UIColor(red: 1, green: 153/255, blue: 153/255, alpha: 0.5)
@@ -76,11 +76,20 @@ open class ZYQuadRangleClipView: UIView {
     func setupPoint(view: ZYClipPointView) {
         let mul: CGFloat = 3
         view.frame.size = CGSize(width: outCircleWidth * mul, height: outCircleWidth * mul)
-        view.circleColor = outCircleColor; view.innerCircleColor = innerCircleColor; view.circleWidth = outCircleWidth; view.innerCircleWidth = innerCircleWidth
+        view.circleColor = self.outCircleColor;
+        view.innerCircleColor = self.innerCircleColor;
+        view.circleWidth = self.outCircleWidth;
+        view.innerCircleWidth = self.innerCircleWidth
     }
     
     open override func didMoveToSuperview() {
         super.didMoveToSuperview()
+        
+        setupPoint(view: self.lefttop)
+        setupPoint(view: leftbottom)
+        setupPoint(view: righttop)
+        setupPoint(view: rightbottom)
+        
     }
     
     open override func didMoveToWindow() {

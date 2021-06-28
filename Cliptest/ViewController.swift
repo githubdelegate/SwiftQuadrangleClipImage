@@ -37,6 +37,11 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         crop = ZYQuadRangleClipView()
+        crop.linePath.lineWidth = 2
+        crop.linePath.setLineDash([0,0], count: 2, phase: 0)
+        crop.outCircleColor = UIColor.purple
+        crop.innerCircleColor = UIColor.purple
+        
         self.imv.addSubview(crop)
     }
 
