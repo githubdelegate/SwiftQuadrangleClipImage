@@ -73,6 +73,15 @@ open class ZYQuadRangleClipView: UIView {
         linePath.lineJoinStyle = .bevel
     }
     
+    public convenience init(lefttop: CGPoint, rightTop: CGPoint, rightBottom: CGPoint, leftBottom: CGPoint) {
+        self.init(frame: CGRect.zero)
+        
+        leftTopPoint = lefttop
+        rightTopPoint = rightTop
+        rightBottomPoint = rightBottom
+        leftBottomPoint = leftBottom
+    }
+    
     func setupPoint(view: ZYClipPointView) {
         let mul: CGFloat = 3
         view.frame.size = CGSize(width: outCircleWidth * mul, height: outCircleWidth * mul)
@@ -109,10 +118,10 @@ open class ZYQuadRangleClipView: UIView {
             superview!.isUserInteractionEnabled = true
             self.backgroundColor = .clear
             
-            self.lefttop.center = CGPoint(x: 0, y: 0).applying(CGAffineTransform(scaleX: self.bounds.width, y: self.bounds.height))
-            self.leftbottom.center = CGPoint(x: 0, y: 1).applying(CGAffineTransform(scaleX: self.bounds.width, y: self.bounds.height))
-            self.righttop.center = CGPoint(x: 1, y: 0).applying(CGAffineTransform(scaleX: self.bounds.width, y: self.bounds.height))
-            self.rightbottom.center = CGPoint(x: 1, y: 1).applying(CGAffineTransform(scaleX: self.bounds.width, y: self.bounds.height))
+            self.lefttop.center = self.leftTopPoint.applying(CGAffineTransform(scaleX: self.bounds.width, y: self.bounds.height))
+            self.leftbottom.center = self.leftBottomPoint.applying(CGAffineTransform(scaleX: self.bounds.width, y: self.bounds.height))
+            self.righttop.center = self.rightTopPoint.applying(CGAffineTransform(scaleX: self.bounds.width, y: self.bounds.height))
+            self.rightbottom.center = self.rightBottomPoint.applying(CGAffineTransform(scaleX: self.bounds.width, y: self.bounds.height))
         
             self.linePath.move(to: self.lefttop.center)
             self.linePath.addLine(to: self.lefttop.center)
@@ -213,6 +222,15 @@ open class ZYQuadRangleClipView: UIView {
     open func getCurrentClipArea() -> (topLeft: CGPoint, topRight: CGPoint, bottomLeft: CGPoint, bottomRight: CGPoint) {
         return (self.leftTopPoint, self.rightTopPoint,self.leftBottomPoint, self.rightBottomPoint)
     }
+    
+    public static func clipViewPoints(lefttop: CGPoint, rightTop: CGPoint, rightBottom: CGPoint, leftBottom: CGPoint) -> ZYQuadRangleClipView {
+        let clip = ZYQuadRangleClipView()
+        clip.leftTopPoint = lefttop
+        clip.rightTopPoint = rightTop
+        clip.rightBottomPoint = rightBottom
+        clip.leftBottomPoint = leftBottom
+        return clip
+    }
 }
 
 extension ZYQuadRangleClipView {
@@ -223,8 +241,13 @@ extension ZYQuadRangleClipView {
         if self.isLinePathValidate == false {
             return nil
         }
+
         
         if let imv = self.superview as? UIImageView, let img = imv.image {
+            
+            if self.leftTopPoint == CGPoint(x: 0, y: 0), self.leftBottomPoint == CGPoint(x: 0, y: 1), self.rightTopPoint == CGPoint(x: 1, y: 0), self.rightBottomPoint == CGPoint(x: 1, y: 1) {
+                return img
+            }
              let clip =  img.clipImageWithPoint(topLeft: self.leftTopPoint, topRight: self.rightTopPoint, bottomRight: self.rightBottomPoint, bottomLeft: self.leftBottomPoint)
             return clip
         }
