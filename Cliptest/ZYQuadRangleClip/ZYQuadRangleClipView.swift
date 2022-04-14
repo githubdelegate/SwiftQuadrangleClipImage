@@ -18,6 +18,7 @@ open class ZYQuadRangleClipView: UIView {
     open var errorAreaFillColor: UIColor = UIColor(red: 1, green: 153/255, blue: 153/255, alpha: 0.5)
     
     open var linePath = UIBezierPath()
+    open var magnifierglass: ZYMaginifierglass!
     
     ///  四个顶点位置  使用的左上角坐标系  比例值
     fileprivate var leftTopPoint = CGPoint(x: 0, y: 0)
@@ -34,6 +35,9 @@ open class ZYQuadRangleClipView: UIView {
     fileprivate var lbges: UIPanGestureRecognizer!
     fileprivate var rtges: UIPanGestureRecognizer!
     fileprivate var rbges: UIPanGestureRecognizer!
+    
+    
+    
     
     /// 是否合法
     private var isLinePathValidate = true
@@ -71,6 +75,15 @@ open class ZYQuadRangleClipView: UIView {
         linePath.lineCapStyle = .round
         linePath.setLineDash([5, 5], count: 2, phase: 0)
         linePath.lineJoinStyle = .bevel
+        
+        magnifierglass = ZYMaginifierglass(offset:  CGPoint.zero,
+                                           radius:  100.0,
+                                             scale: 2.0,
+                                             borderColor:  UIColor.lightGray,
+                                             borderWidth:  3.0,
+                                             showsCrosshair:  true,
+                                             crosshairColor:  UIColor.lightGray,
+                                             crosshairWidth: 0.5)
     }
     
     public convenience init(lefttop: CGPoint, rightTop: CGPoint, rightBottom: CGPoint, leftBottom: CGPoint) {
@@ -135,7 +148,7 @@ open class ZYQuadRangleClipView: UIView {
     
     @objc func panGes(ges: UIPanGestureRecognizer) {
         var point = ges.location(in: self)
-        
+        let imagpoin = ges.location(in: self.superview)
         if point.x <= 0 {
             point.x = 0
         }
@@ -169,6 +182,20 @@ open class ZYQuadRangleClipView: UIView {
         }
         
         self.refreshLinePath()
+        
+        switch ges.state {
+        case .began:
+            magnifierglass.magnifiedView = self.superview
+            magnifierglass.magnify(at: imagpoin)
+        case .changed:
+            magnifierglass.magnify(at: imagpoin)
+        case .cancelled, .ended:
+            magnifierglass.magnifiedView = nil
+        case .possible, .failed:
+            magnifierglass.magnifiedView = nil
+        @unknown default:
+            magnifierglass.magnifiedView = nil
+        }
         
         let angle1 = lefttop.center.angleBetween(point1: leftbottom.center, point2: righttop.center)
         let angle2 = righttop.center.angleBetween(point1: lefttop.center, point2: rightbottom.center)
@@ -242,9 +269,8 @@ extension ZYQuadRangleClipView {
             return nil
         }
 
-        
+
         if let imv = self.superview as? UIImageView, let img = imv.image {
-            
             if self.leftTopPoint == CGPoint(x: 0, y: 0), self.leftBottomPoint == CGPoint(x: 0, y: 1), self.rightTopPoint == CGPoint(x: 1, y: 0), self.rightBottomPoint == CGPoint(x: 1, y: 1) {
                 return img
             }
@@ -252,5 +278,22 @@ extension ZYQuadRangleClipView {
             return clip
         }
         return nil
+    }
+    
+    
+    open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        let insetFrame = self.bounds.insetBy(dx: -45, dy: -45)
+        return insetFrame.contains(point)
+    }
+}
+
+
+/// 实现了扩展触摸范围的imageview
+open class ZYQuadRangelClipImageView: UIImageView {
+    /// 扩展范围
+    var extendSpace: CGFloat = 45.0
+    open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        let insetFrame = self.bounds.insetBy(dx: -(extendSpace), dy: -extendSpace)
+         return insetFrame.contains(point)
     }
 }

@@ -18,6 +18,7 @@
 		0029D83D267B1B78004B9CD7 /* ZYClipImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0029D83C267B1B78004B9CD7 /* ZYClipImageTool.swift */; };
 		0029D841267B22C2004B9CD7 /* xxxas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0029D840267B22C2004B9CD7 /* xxxas.jpg */; };
 		1AD58939268582A9001EF177 /* ZYClipPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD58938268582A9001EF177 /* ZYClipPointView.swift */; };
+		3517646C2807C2E40095BA3D /* ZYMaginifierglass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517646B2807C2E40095BA3D /* ZYMaginifierglass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0029D83C267B1B78004B9CD7 /* ZYClipImageTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYClipImageTool.swift; sourceTree = "<group>"; };
 		0029D840267B22C2004B9CD7 /* xxxas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xxxas.jpg; sourceTree = "<group>"; };
 		1AD58938268582A9001EF177 /* ZYClipPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYClipPointView.swift; sourceTree = "<group>"; };
+		3517646B2807C2E40095BA3D /* ZYMaginifierglass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYMaginifierglass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				1AD58938268582A9001EF177 /* ZYClipPointView.swift */,
 				0029D83C267B1B78004B9CD7 /* ZYClipImageTool.swift */,
 				0029D83A267AFE3F004B9CD7 /* ZYClipMathTool.swift */,
+				3517646B2807C2E40095BA3D /* ZYMaginifierglass.swift */,
 			);
 			path = ZYQuadRangleClip;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			files = (
 				0029D839267AE12E004B9CD7 /* ZYQuadRangleClipView.swift in Sources */,
 				0029D83B267AFE3F004B9CD7 /* ZYClipMathTool.swift in Sources */,
+				3517646C2807C2E40095BA3D /* ZYMaginifierglass.swift in Sources */,
 				0029D83D267B1B78004B9CD7 /* ZYClipImageTool.swift in Sources */,
 				0029D829267AE11A004B9CD7 /* ViewController.swift in Sources */,
 				0029D825267AE11A004B9CD7 /* AppDelegate.swift in Sources */,
