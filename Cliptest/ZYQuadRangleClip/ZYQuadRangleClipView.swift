@@ -27,7 +27,7 @@ open class ZYQuadRangleClipView: UIView {
     }
     
     /// 默认全选区域
-    public static let initFullPoints: (CGPoint, CGPoint, CGPoint, CGPoint)  = (CGPoint(x: 0, y: 0), CGPoint(x: 1, y: 0), CGPoint(x: 0, y: 1), CGPoint(x: 1, y: 1))
+    public static let initFullPoints: (CGPoint, CGPoint, CGPoint, CGPoint)  = (CGPoint(x: 0, y: 0), CGPoint(x: 1, y: 0), CGPoint(x: 1, y: 1), CGPoint(x: 0, y: 1))
     
     ///  四个顶点位置  使用的左上角坐标系  比例值
     fileprivate var leftTopPoint = CGPoint(x: 0, y: 0)
