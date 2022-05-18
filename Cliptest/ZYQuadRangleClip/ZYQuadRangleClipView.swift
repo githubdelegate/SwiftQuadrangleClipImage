@@ -7,6 +7,9 @@
 
 import UIKit
 
+/// 剪切范围 区域
+public typealias ZYQuadRangleCropPoints = (CGPoint, CGPoint, CGPoint, CGPoint)
+
 open class ZYQuadRangleClipView: UIView {
     
     open var lineStrokeColor: UIColor! = UIColor(red: 72/255.0, green: 34/255.0, blue: 236/255, alpha: 1)
@@ -20,6 +23,8 @@ open class ZYQuadRangleClipView: UIView {
     open var linePath = UIBezierPath()
     open var magnifierglass: ZYMaginifierglass!
     
+    /// 剪切范围变化了
+    open var cropChange: (() -> Void)?
     
     /// 当前选择区域
     open var currentPoints: (CGPoint, CGPoint, CGPoint, CGPoint) {
@@ -27,7 +32,7 @@ open class ZYQuadRangleClipView: UIView {
     }
     
     /// 默认全选区域
-    public static let initFullPoints: (CGPoint, CGPoint, CGPoint, CGPoint)  = (CGPoint(x: 0, y: 0), CGPoint(x: 1, y: 0), CGPoint(x: 1, y: 1), CGPoint(x: 0, y: 1))
+    public static let initFullPoints: ZYQuadRangleCropPoints  = (CGPoint(x: 0, y: 0), CGPoint(x: 1, y: 0), CGPoint(x: 1, y: 1), CGPoint(x: 0, y: 1))
     
     ///  四个顶点位置  使用的左上角坐标系  比例值
     fileprivate var leftTopPoint = CGPoint(x: 0, y: 0)
@@ -44,9 +49,6 @@ open class ZYQuadRangleClipView: UIView {
     fileprivate var lbges: UIPanGestureRecognizer!
     fileprivate var rtges: UIPanGestureRecognizer!
     fileprivate var rbges: UIPanGestureRecognizer!
-    
-    
-    
     
     /// 是否合法
     private var isLinePathValidate = true
@@ -177,7 +179,6 @@ open class ZYQuadRangleClipView: UIView {
         if ges == ltges {
             lefttop.center = point
             leftTopPoint = point.applying(CGAffineTransform(scaleX: 1/self.bounds.width, y: 1/self.bounds.height))
-            print("xxx")
             
         } else if ges == rtges {
             righttop.center = point
@@ -224,6 +225,10 @@ open class ZYQuadRangleClipView: UIView {
             print("！！！！ 非法")
         }
         self.setNeedsDisplay()
+        
+        if ges.state == .ended {
+            self.cropChange?()
+        }
     }
     
     required public init?(coder: NSCoder) {
