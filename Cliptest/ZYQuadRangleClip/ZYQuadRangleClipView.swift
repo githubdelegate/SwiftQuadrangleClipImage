@@ -10,6 +10,30 @@ import UIKit
 /// 剪切范围 区域
 public typealias ZYQuadRangleCropPoints = (CGPoint, CGPoint, CGPoint, CGPoint)
 
+extension ZYQuadRangleClipView {
+    
+    /// 旋转当前的剪切区域， 按照旋转的方向， 把每个剪切顶点的值 进行旋转， 每个剪切点都是比例值
+    /// - Parameters:
+    ///   - points: 原来的剪切点
+    ///   - orientation: 旋转方向
+    /// - Returns: 旋转后的剪切点
+    public static func rotateCrop(points: ZYQuadRangleCropPoints, orientation:UIImage.Orientation) -> ZYQuadRangleCropPoints {
+        if orientation == UIImage.Orientation.left {
+            let leftbottom = CGPoint(x: points.0.y, y: 1 - points.0.x)
+            let lefttop = CGPoint(x: points.1.y, y:  1 - points.1.x)
+            let righttop = CGPoint(x: points.2.y, y: 1 - points.2.x)
+            let rightbottom = CGPoint(x: points.3.y, y: 1 - points.3.x)
+            return (lefttop, righttop,rightbottom, leftbottom)
+        } else {
+            let leftbottom = CGPoint(x: 1 - points.2.y, y: points.2.x)
+            let lefttop = CGPoint(x: 1 - points.3.y, y:  points.3.x)
+            let righttop = CGPoint(x: 1 - points.0.y, y: points.0.x)
+            let rightbottom = CGPoint(x: 1 - points.1.y, y: points.1.x)
+            return (lefttop, righttop,rightbottom, leftbottom)
+        }
+    }
+}
+
 open class ZYQuadRangleClipView: UIView {
     
     open var lineStrokeColor: UIColor! = UIColor(red: 72/255.0, green: 34/255.0, blue: 236/255, alpha: 1)
@@ -28,7 +52,7 @@ open class ZYQuadRangleClipView: UIView {
     
     /// 当前选择区域
     open var currentPoints: (CGPoint, CGPoint, CGPoint, CGPoint) {
-        return (leftTopPoint, rightTopPoint, leftBottomPoint, rightBottomPoint)
+        return (leftTopPoint, rightTopPoint, rightBottomPoint, leftBottomPoint)
     }
     
     /// 默认全选区域
