@@ -130,6 +130,7 @@ public class ZYMaginifierglass : UIView {
         guard magnifiedView != nil else { return }
         
         magnifiedPoint = point
+    
         layer.setNeedsDisplay()
     }
     
@@ -145,15 +146,15 @@ public class ZYMaginifierglass : UIView {
     
     /// Renders magnification glass
     public override func draw(_ rect: CGRect) {
-        guard let context = UIGraphicsGetCurrentContext() else { return }
+        removeFromSuperview()
         
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+  
         context.translateBy(x: radius, y: radius)
         context.scaleBy(x: scale, y: scale)
         context.translateBy(x: -magnifiedPoint.x, y: -magnifiedPoint.y)
-        
-        removeFromSuperview()
         magnifiedView?.layer.render(in: context)
         magnifiedView?.addSubview(self)
+//        print(" frame = \(self.frame) ")
     }
-    
 }

@@ -36,6 +36,9 @@ extension ZYQuadRangleClipView {
 
 open class ZYQuadRangleClipView: UIView {
     
+    
+    open var magView: UIView?
+    
     open var lineStrokeColor: UIColor! = UIColor(red: 72/255.0, green: 34/255.0, blue: 236/255, alpha: 1)
     
     open var outCircleWidth: CGFloat = 30, innerCircleWidth: CGFloat = 20
@@ -46,6 +49,11 @@ open class ZYQuadRangleClipView: UIView {
     
     open var linePath = UIBezierPath()
     open var magnifierglass: ZYMaginifierglass!
+    
+    /// 剪切范围是否合法
+    open var isCropPathValid: Bool {
+        return self.isLinePathValidate
+    }
     
     /// 剪切范围变化了
     open var cropChange: (() -> Void)?
@@ -183,7 +191,26 @@ open class ZYQuadRangleClipView: UIView {
     
     @objc func panGes(ges: UIPanGestureRecognizer) {
         var point = ges.location(in: self)
-        let imagpoin = ges.location(in: self.superview)
+        var imagpoin = ges.location(in: self.magView)
+        let convertRect = self.convert(self.bounds, to: self.magView)
+        print("mag point= \(imagpoin)- converntframe = \(convertRect) ")
+        
+        if imagpoin.x < convertRect.minX {
+            imagpoin.x =  convertRect.minX
+        }
+        
+        if imagpoin.x > convertRect.maxX {
+            imagpoin.x =  convertRect.maxX
+        }
+
+        if imagpoin.y <  convertRect.minY {
+            imagpoin.y =  convertRect.minY
+        }
+        
+        if imagpoin.y > convertRect.maxY {
+            imagpoin.y =  convertRect.maxY
+        }
+        
         if point.x <= 0 {
             point.x = 0
         }
@@ -219,7 +246,8 @@ open class ZYQuadRangleClipView: UIView {
         
         switch ges.state {
         case .began:
-            magnifierglass.magnifiedView = self.superview
+            magnifierglass.magnifiedView = self.magView
+//            magnifierglass.testView = self
             magnifierglass.magnify(at: imagpoin)
         case .changed:
             magnifierglass.magnify(at: imagpoin)
