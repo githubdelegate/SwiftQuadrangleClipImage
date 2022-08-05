@@ -13,42 +13,12 @@
 		0029D82C267AE11A004B9CD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0029D82A267AE11A004B9CD7 /* Main.storyboard */; };
 		0029D82E267AE11C004B9CD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0029D82D267AE11C004B9CD7 /* Assets.xcassets */; };
 		0029D831267AE11C004B9CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0029D82F267AE11C004B9CD7 /* LaunchScreen.storyboard */; };
-		0029D839267AE12E004B9CD7 /* ZYQuadRangleClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0029D838267AE12E004B9CD7 /* ZYQuadRangleClipView.swift */; };
-		0029D83B267AFE3F004B9CD7 /* ZYClipMathTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0029D83A267AFE3F004B9CD7 /* ZYClipMathTool.swift */; };
-		0029D83D267B1B78004B9CD7 /* ZYClipImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0029D83C267B1B78004B9CD7 /* ZYClipImageTool.swift */; };
-		1AD58939268582A9001EF177 /* ZYClipPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD58938268582A9001EF177 /* ZYClipPointView.swift */; };
-		3517646C2807C2E40095BA3D /* ZYMaginifierglass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517646B2807C2E40095BA3D /* ZYMaginifierglass.swift */; };
-		35B7F29A289D211A002942E4 /* ZYQuadrangleClipImageView.docc in Sources */ = {isa = PBXBuildFile; fileRef = 35B7F299289D211A002942E4 /* ZYQuadrangleClipImageView.docc */; };
-		35B7F2A0289D211A002942E4 /* ZYQuadrangleClipImageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B7F296289D211A002942E4 /* ZYQuadrangleClipImageView.framework */; };
-		35B7F2A7289D211A002942E4 /* ZYQuadrangleClipImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7F2A6289D211A002942E4 /* ZYQuadrangleClipImageViewTests.swift */; };
-		35B7F2A8289D211A002942E4 /* ZYQuadrangleClipImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 35B7F298289D211A002942E4 /* ZYQuadrangleClipImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		35B7F2AB289D211A002942E4 /* ZYQuadrangleClipImageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B7F296289D211A002942E4 /* ZYQuadrangleClipImageView.framework */; };
-		35B7F2AC289D211A002942E4 /* ZYQuadrangleClipImageView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35B7F296289D211A002942E4 /* ZYQuadrangleClipImageView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35B7F2BB289D2337002942E4 /* ZYQuadRangleClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7F2B6289D2337002942E4 /* ZYQuadRangleClipView.swift */; };
+		35B7F2BC289D2337002942E4 /* ZYClipPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7F2B7289D2337002942E4 /* ZYClipPointView.swift */; };
+		35B7F2BD289D2337002942E4 /* ZYClipMathTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7F2B8289D2337002942E4 /* ZYClipMathTool.swift */; };
+		35B7F2BE289D2337002942E4 /* ZYClipImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7F2B9289D2337002942E4 /* ZYClipImageTool.swift */; };
+		35B7F2BF289D2337002942E4 /* ZYMaginifierglass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7F2BA289D2337002942E4 /* ZYMaginifierglass.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		35B7F2A1289D211A002942E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0029D819267AE11A004B9CD7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 35B7F295289D211A002942E4;
-			remoteInfo = ZYQuadrangleClipImageView;
-		};
-		35B7F2A3289D211A002942E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0029D819267AE11A004B9CD7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0029D820267AE11A004B9CD7;
-			remoteInfo = Cliptest;
-		};
-		35B7F2A9289D211A002942E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0029D819267AE11A004B9CD7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 35B7F295289D211A002942E4;
-			remoteInfo = ZYQuadrangleClipImageView;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		35B7F2B0289D211A002942E4 /* Embed Frameworks */ = {
@@ -57,7 +27,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				35B7F2AC289D211A002942E4 /* ZYQuadrangleClipImageView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,16 +42,12 @@
 		0029D82D267AE11C004B9CD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0029D830267AE11C004B9CD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0029D832267AE11C004B9CD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0029D838267AE12E004B9CD7 /* ZYQuadRangleClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYQuadRangleClipView.swift; sourceTree = "<group>"; };
-		0029D83A267AFE3F004B9CD7 /* ZYClipMathTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYClipMathTool.swift; sourceTree = "<group>"; };
-		0029D83C267B1B78004B9CD7 /* ZYClipImageTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYClipImageTool.swift; sourceTree = "<group>"; };
-		1AD58938268582A9001EF177 /* ZYClipPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYClipPointView.swift; sourceTree = "<group>"; };
-		3517646B2807C2E40095BA3D /* ZYMaginifierglass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYMaginifierglass.swift; sourceTree = "<group>"; };
-		35B7F296289D211A002942E4 /* ZYQuadrangleClipImageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZYQuadrangleClipImageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		35B7F298289D211A002942E4 /* ZYQuadrangleClipImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYQuadrangleClipImageView.h; sourceTree = "<group>"; };
-		35B7F299289D211A002942E4 /* ZYQuadrangleClipImageView.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ZYQuadrangleClipImageView.docc; sourceTree = "<group>"; };
-		35B7F29F289D211A002942E4 /* ZYQuadrangleClipImageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZYQuadrangleClipImageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		35B7F2A6289D211A002942E4 /* ZYQuadrangleClipImageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYQuadrangleClipImageViewTests.swift; sourceTree = "<group>"; };
+		35B7F2B6289D2337002942E4 /* ZYQuadRangleClipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYQuadRangleClipView.swift; sourceTree = "<group>"; };
+		35B7F2B7289D2337002942E4 /* ZYClipPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYClipPointView.swift; sourceTree = "<group>"; };
+		35B7F2B8289D2337002942E4 /* ZYClipMathTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYClipMathTool.swift; sourceTree = "<group>"; };
+		35B7F2B9289D2337002942E4 /* ZYClipImageTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYClipImageTool.swift; sourceTree = "<group>"; };
+		35B7F2BA289D2337002942E4 /* ZYMaginifierglass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYMaginifierglass.swift; sourceTree = "<group>"; };
+		35B7F2C0289D250D002942E4 /* Cliptest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cliptest.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,22 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35B7F2AB289D211A002942E4 /* ZYQuadrangleClipImageView.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		35B7F293289D211A002942E4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		35B7F29C289D211A002942E4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				35B7F2A0289D211A002942E4 /* ZYQuadrangleClipImageView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,8 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				0029D823267AE11A004B9CD7 /* Cliptest */,
-				35B7F297289D211A002942E4 /* ZYQuadrangleClipImageView */,
-				35B7F2A5289D211A002942E4 /* ZYQuadrangleClipImageViewTests */,
 				0029D822267AE11A004B9CD7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,8 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				0029D821267AE11A004B9CD7 /* Cliptest.app */,
-				35B7F296289D211A002942E4 /* ZYQuadrangleClipImageView.framework */,
-				35B7F29F289D211A002942E4 /* ZYQuadrangleClipImageViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,7 +80,8 @@
 		0029D823267AE11A004B9CD7 /* Cliptest */ = {
 			isa = PBXGroup;
 			children = (
-				1AD5893726857BD0001EF177 /* ZYQuadRangleClip */,
+				35B7F2C0289D250D002942E4 /* Cliptest.entitlements */,
+				35B7F2B5289D2337002942E4 /* Source */,
 				0029D824267AE11A004B9CD7 /* AppDelegate.swift */,
 				0029D826267AE11A004B9CD7 /* SceneDelegate.swift */,
 				0029D828267AE11A004B9CD7 /* ViewController.swift */,
@@ -147,47 +93,19 @@
 			path = Cliptest;
 			sourceTree = "<group>";
 		};
-		1AD5893726857BD0001EF177 /* ZYQuadRangleClip */ = {
+		35B7F2B5289D2337002942E4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				0029D838267AE12E004B9CD7 /* ZYQuadRangleClipView.swift */,
-				1AD58938268582A9001EF177 /* ZYClipPointView.swift */,
-				0029D83C267B1B78004B9CD7 /* ZYClipImageTool.swift */,
-				0029D83A267AFE3F004B9CD7 /* ZYClipMathTool.swift */,
-				3517646B2807C2E40095BA3D /* ZYMaginifierglass.swift */,
+				35B7F2B6289D2337002942E4 /* ZYQuadRangleClipView.swift */,
+				35B7F2B7289D2337002942E4 /* ZYClipPointView.swift */,
+				35B7F2B8289D2337002942E4 /* ZYClipMathTool.swift */,
+				35B7F2B9289D2337002942E4 /* ZYClipImageTool.swift */,
+				35B7F2BA289D2337002942E4 /* ZYMaginifierglass.swift */,
 			);
-			path = ZYQuadRangleClip;
-			sourceTree = "<group>";
-		};
-		35B7F297289D211A002942E4 /* ZYQuadrangleClipImageView */ = {
-			isa = PBXGroup;
-			children = (
-				35B7F298289D211A002942E4 /* ZYQuadrangleClipImageView.h */,
-				35B7F299289D211A002942E4 /* ZYQuadrangleClipImageView.docc */,
-			);
-			path = ZYQuadrangleClipImageView;
-			sourceTree = "<group>";
-		};
-		35B7F2A5289D211A002942E4 /* ZYQuadrangleClipImageViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				35B7F2A6289D211A002942E4 /* ZYQuadrangleClipImageViewTests.swift */,
-			);
-			path = ZYQuadrangleClipImageViewTests;
-			sourceTree = "<group>";
+			path = Source;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		35B7F291289D211A002942E4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				35B7F2A8289D211A002942E4 /* ZYQuadrangleClipImageView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		0029D820267AE11A004B9CD7 /* Cliptest */ = {
@@ -202,49 +120,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				35B7F2AA289D211A002942E4 /* PBXTargetDependency */,
 			);
 			name = Cliptest;
 			productName = Cliptest;
 			productReference = 0029D821267AE11A004B9CD7 /* Cliptest.app */;
 			productType = "com.apple.product-type.application";
-		};
-		35B7F295289D211A002942E4 /* ZYQuadrangleClipImageView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 35B7F2AD289D211A002942E4 /* Build configuration list for PBXNativeTarget "ZYQuadrangleClipImageView" */;
-			buildPhases = (
-				35B7F291289D211A002942E4 /* Headers */,
-				35B7F292289D211A002942E4 /* Sources */,
-				35B7F293289D211A002942E4 /* Frameworks */,
-				35B7F294289D211A002942E4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ZYQuadrangleClipImageView;
-			productName = ZYQuadrangleClipImageView;
-			productReference = 35B7F296289D211A002942E4 /* ZYQuadrangleClipImageView.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		35B7F29E289D211A002942E4 /* ZYQuadrangleClipImageViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 35B7F2B1289D211A002942E4 /* Build configuration list for PBXNativeTarget "ZYQuadrangleClipImageViewTests" */;
-			buildPhases = (
-				35B7F29B289D211A002942E4 /* Sources */,
-				35B7F29C289D211A002942E4 /* Frameworks */,
-				35B7F29D289D211A002942E4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				35B7F2A2289D211A002942E4 /* PBXTargetDependency */,
-				35B7F2A4289D211A002942E4 /* PBXTargetDependency */,
-			);
-			name = ZYQuadrangleClipImageViewTests;
-			productName = ZYQuadrangleClipImageViewTests;
-			productReference = 35B7F29F289D211A002942E4 /* ZYQuadrangleClipImageViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -258,13 +138,6 @@
 					0029D820267AE11A004B9CD7 = {
 						CreatedOnToolsVersion = 12.5;
 					};
-					35B7F295289D211A002942E4 = {
-						CreatedOnToolsVersion = 13.4.1;
-					};
-					35B7F29E289D211A002942E4 = {
-						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = 0029D820267AE11A004B9CD7;
-					};
 				};
 			};
 			buildConfigurationList = 0029D81C267AE11A004B9CD7 /* Build configuration list for PBXProject "Cliptest" */;
@@ -276,13 +149,13 @@
 				Base,
 			);
 			mainGroup = 0029D818267AE11A004B9CD7;
+			packageReferences = (
+			);
 			productRefGroup = 0029D822267AE11A004B9CD7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0029D820267AE11A004B9CD7 /* Cliptest */,
-				35B7F295289D211A002942E4 /* ZYQuadrangleClipImageView */,
-				35B7F29E289D211A002942E4 /* ZYQuadrangleClipImageViewTests */,
 			);
 		};
 /* End PBXProject section */
@@ -298,20 +171,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		35B7F294289D211A002942E4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		35B7F29D289D211A002942E4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -319,52 +178,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0029D839267AE12E004B9CD7 /* ZYQuadRangleClipView.swift in Sources */,
-				0029D83B267AFE3F004B9CD7 /* ZYClipMathTool.swift in Sources */,
-				3517646C2807C2E40095BA3D /* ZYMaginifierglass.swift in Sources */,
-				0029D83D267B1B78004B9CD7 /* ZYClipImageTool.swift in Sources */,
+				35B7F2BD289D2337002942E4 /* ZYClipMathTool.swift in Sources */,
 				0029D829267AE11A004B9CD7 /* ViewController.swift in Sources */,
+				35B7F2BF289D2337002942E4 /* ZYMaginifierglass.swift in Sources */,
 				0029D825267AE11A004B9CD7 /* AppDelegate.swift in Sources */,
+				35B7F2BC289D2337002942E4 /* ZYClipPointView.swift in Sources */,
 				0029D827267AE11A004B9CD7 /* SceneDelegate.swift in Sources */,
-				1AD58939268582A9001EF177 /* ZYClipPointView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		35B7F292289D211A002942E4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				35B7F29A289D211A002942E4 /* ZYQuadrangleClipImageView.docc in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		35B7F29B289D211A002942E4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				35B7F2A7289D211A002942E4 /* ZYQuadrangleClipImageViewTests.swift in Sources */,
+				35B7F2BE289D2337002942E4 /* ZYClipImageTool.swift in Sources */,
+				35B7F2BB289D2337002942E4 /* ZYQuadRangleClipView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		35B7F2A2289D211A002942E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 35B7F295289D211A002942E4 /* ZYQuadrangleClipImageView */;
-			targetProxy = 35B7F2A1289D211A002942E4 /* PBXContainerItemProxy */;
-		};
-		35B7F2A4289D211A002942E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0029D820267AE11A004B9CD7 /* Cliptest */;
-			targetProxy = 35B7F2A3289D211A002942E4 /* PBXContainerItemProxy */;
-		};
-		35B7F2AA289D211A002942E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 35B7F295289D211A002942E4 /* ZYQuadrangleClipImageView */;
-			targetProxy = 35B7F2A9289D211A002942E4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0029D82A267AE11A004B9CD7 /* Main.storyboard */ = {
@@ -507,6 +332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Cliptest/Cliptest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GJ4WQU9362;
 				INFOPLIST_FILE = Cliptest/Info.plist;
@@ -517,6 +343,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xxxxfe.clip.Cliptest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -527,6 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Cliptest/Cliptest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GJ4WQU9362;
 				INFOPLIST_FILE = Cliptest/Info.plist;
@@ -537,112 +365,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xxxxfe.clip.Cliptest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		35B7F2AE289D211A002942E4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GJ4WQU9362;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-231.ZYQuadrangleClipImageView";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		35B7F2AF289D211A002942E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GJ4WQU9362;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-231.ZYQuadrangleClipImageView";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		35B7F2B2289D211A002942E4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 68NTAFW56A;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-231.ZYQuadrangleClipImageViewTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cliptest.app/Cliptest";
-			};
-			name = Debug;
-		};
-		35B7F2B3289D211A002942E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 68NTAFW56A;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-231.ZYQuadrangleClipImageViewTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cliptest.app/Cliptest";
 			};
 			name = Release;
 		};
@@ -663,24 +388,6 @@
 			buildConfigurations = (
 				0029D836267AE11C004B9CD7 /* Debug */,
 				0029D837267AE11C004B9CD7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		35B7F2AD289D211A002942E4 /* Build configuration list for PBXNativeTarget "ZYQuadrangleClipImageView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				35B7F2AE289D211A002942E4 /* Debug */,
-				35B7F2AF289D211A002942E4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		35B7F2B1289D211A002942E4 /* Build configuration list for PBXNativeTarget "ZYQuadrangleClipImageViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				35B7F2B2289D211A002942E4 /* Debug */,
-				35B7F2B3289D211A002942E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
