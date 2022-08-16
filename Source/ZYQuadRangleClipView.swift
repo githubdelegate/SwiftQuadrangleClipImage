@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 /// 剪切范围 区域
 public typealias ZYQuadRangleCropPoints = (CGPoint, CGPoint, CGPoint, CGPoint)
 
@@ -325,7 +324,8 @@ open class ZYQuadRangleClipView: UIView {
         return clip
     }
 }
-
+/// 扩展范围
+let extendSpace: CGFloat = 45.0
 extension ZYQuadRangleClipView {
     
     /// 如果superview 是 imageview 直接剪切获取 image
@@ -346,9 +346,9 @@ extension ZYQuadRangleClipView {
         return nil
     }
     
-    
     open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        let insetFrame = self.bounds.insetBy(dx: -45, dy: -45)
+        let insetFrame = self.bounds.insetBy(dx: -extendSpace, dy: -extendSpace)
+        print("ZYQuadRangleClipView  point+ \(point)-frame = \(insetFrame)")
         return insetFrame.contains(point)
     }
 }
@@ -356,10 +356,48 @@ extension ZYQuadRangleClipView {
 
 /// 实现了扩展触摸范围的imageview
 open class ZYQuadRangelClipImageView: UIImageView {
-    /// 扩展范围
-    var extendSpace: CGFloat = 45.0
+   
+    open override func addSubview(_ view: UIView) {
+        if view is ZYQuadRangleClipView {
+            tmpclipView = view as? ZYQuadRangleClipView
+        }
+        super.addSubview(view)
+    }
+    
     open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         let insetFrame = self.bounds.insetBy(dx: -(extendSpace), dy: -extendSpace)
-         return insetFrame.contains(point)
+        let co = insetFrame.contains(point)
+        print("ZYQuadRangelClipImageView point+ \(point)-frame = \(insetFrame)-")
+         return co
+    }
+}
+
+/// 当触摸点不在ZYQuadRangelClipExtensionImageView范围的时候，比如x <0的时候，ZYQuadRangelClipExtensionImageView.subviews = nil, 不知道为什么，	导致无法获取到subview 所有使用了全局变量
+///
+var tmpclipView: ZYQuadRangleClipView?
+/// 扩大区域
+open class ZYQuadRangelClipExtensionImageView: UIImageView {
+    open override func addSubview(_ view: UIView) {
+        if view is ZYQuadRangleClipView {
+            tmpclipView = view as? ZYQuadRangleClipView
+        }
+        super.addSubview(view)
+    }
+   
+    open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        let insetFrame = self.bounds.insetBy(dx: -(extendSpace), dy: -extendSpace)
+        let co = insetFrame.contains(point)
+        print("ZYQuadRangelClipImageView point+ \(point)-frame = \(insetFrame)-")
+         return co
+    }
+    
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if self.point(inside: point, with: event) == true && tmpclipView != nil {
+            let convertedPoint = tmpclipView!.convert(point, from: self)
+            let hitview = tmpclipView?.hitTest(convertedPoint, with: event)
+            print(" point+ \(point)-subview=\(self.subviews)-hitview = \(hitview)")
+            return hitview
+        }
+        return super.hitTest(point, with: event)
     }
 }

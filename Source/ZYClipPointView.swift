@@ -59,4 +59,8 @@ class ZYClipPointView: UIView {
         
         self.updateUI()
     }
+    
+//    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+//        
+//    }
 }
