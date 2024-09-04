@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "ZYQuadrangleClipImageView"
-  spec.version      = "1.1.7"
+  spec.version      = "1.1.8"
   spec.summary      = "A short description of ZYQuadrangleClipImageView."
 
   # This description is used to generate tags and improve search results.
@@ -53,10 +53,7 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  # spec.author             = { "zhangyun" => "zhangyun@top-stack.com" }
-    spec.author    = "zhangyun"
-  # spec.authors            = { "zhangyun" => "zhangyun@top-stack.com" }
-  # spec.social_media_url   = "https://twitter.com/zhangyun"
+  spec.author    = "xzzy"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

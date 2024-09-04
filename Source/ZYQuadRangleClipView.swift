@@ -36,6 +36,8 @@ extension ZYQuadRangleClipView {
 open class ZYQuadRangleClipView: UIView {
     
     
+    
+    
     open var magView: UIView?
     
     open var lineStrokeColor: UIColor! = UIColor(red: 72/255.0, green: 34/255.0, blue: 236/255, alpha: 1)
@@ -64,6 +66,9 @@ open class ZYQuadRangleClipView: UIView {
     
     /// 默认全选区域
     public static let initFullPoints: ZYQuadRangleCropPoints  = (CGPoint(x: 0, y: 0), CGPoint(x: 1, y: 0), CGPoint(x: 1, y: 1), CGPoint(x: 0, y: 1))
+    
+    
+    fileprivate var moffset: CGPoint = CGPoint(x: 0, y: -70)
     
     ///  四个顶点位置  使用的左上角坐标系  比例值
     fileprivate var leftTopPoint = CGPoint(x: 0, y: 0)
@@ -118,7 +123,7 @@ open class ZYQuadRangleClipView: UIView {
         linePath.setLineDash([5, 5], count: 2, phase: 0)
         linePath.lineJoinStyle = .bevel
         
-        magnifierglass = ZYMaginifierglass(offset:  CGPoint.zero,
+        magnifierglass = ZYMaginifierglass(offset:  moffset,
                                            radius:  100.0,
                                              scale: 2.0,
                                              borderColor:  UIColor.lightGray,
@@ -128,13 +133,39 @@ open class ZYQuadRangleClipView: UIView {
                                              crosshairWidth: 0.5)
     }
     
-    public convenience init(lefttop: CGPoint, rightTop: CGPoint, rightBottom: CGPoint, leftBottom: CGPoint) {
+    public convenience init(lefttop: CGPoint, rightTop: CGPoint, rightBottom: CGPoint, leftBottom: CGPoint, mOffset: CGPoint = CGPoint(x: 0, y: -70)) {
+        
         self.init(frame: CGRect.zero)
+        
+        moffset = mOffset
         
         leftTopPoint = lefttop
         rightTopPoint = rightTop
         rightBottomPoint = rightBottom
         leftBottomPoint = leftBottom
+        
+        
+        magnifierglass = ZYMaginifierglass(offset:  moffset,
+                                           radius:  100.0,
+                                             scale: 2.0,
+                                             borderColor:  UIColor.lightGray,
+                                             borderWidth:  3.0,
+                                             showsCrosshair:  true,
+                                             crosshairColor:  UIColor.lightGray,
+                                             crosshairWidth: 0.5)
+    }
+    
+    public convenience init(mOffset: CGPoint = CGPoint(x: 0, y: -70)) {
+        self.init(frame: CGRect.zero)
+        moffset = mOffset
+        magnifierglass = ZYMaginifierglass(offset:  moffset,
+                                           radius:  100.0,
+                                             scale: 2.0,
+                                             borderColor:  UIColor.lightGray,
+                                             borderWidth:  3.0,
+                                             showsCrosshair:  true,
+                                             crosshairColor:  UIColor.lightGray,
+                                             crosshairWidth: 0.5)
     }
     
     func setupPoint(view: ZYClipPointView) {
@@ -184,11 +215,19 @@ open class ZYQuadRangleClipView: UIView {
             self.linePath.addLine(to: self.rightbottom.center)
             self.linePath.addLine(to: self.leftbottom.center)
             self.linePath.close()
-            
         }
     }
     
     @objc func panGes(ges: UIPanGestureRecognizer) {
+        
+        if ges.state  == .began {
+            ges.view?.isHidden = true
+        }
+        
+        if ges.state == .ended || ges.state == .cancelled || ges.state == .failed {
+            ges.view?.isHidden = false
+        }
+        
         var point = ges.location(in: self)
         var imagpoin = ges.location(in: self.magView)
         let convertRect = self.convert(self.bounds, to: self.magView)
@@ -395,7 +434,7 @@ open class ZYQuadRangelClipExtensionImageView: UIImageView {
         if self.point(inside: point, with: event) == true && tmpclipView != nil {
             let convertedPoint = tmpclipView!.convert(point, from: self)
             let hitview = tmpclipView?.hitTest(convertedPoint, with: event)
-            print(" point+ \(point)-subview=\(self.subviews)-hitview = \(hitview)")
+            print(" point+ \(point)-subview=\(self.subviews)-hitview = \(String(describing: hitview))")
             return hitview
         }
         return super.hitTest(point, with: event)
